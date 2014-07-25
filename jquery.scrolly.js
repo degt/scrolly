@@ -31,6 +31,7 @@
         this.height = this.$element.outerHeight(true);
         this.velocity = this.$element.attr('data-velocity');
         this.bgStart = parseInt(this.$element.attr('data-fit'), 10);
+        this.min = parseInt(this.$element.attr('data-min'), 10);
 
         $(document).scroll(function(){
             self.didScroll = true;
@@ -60,6 +61,9 @@
         }
         // Fix background position
         if(this.bgStart){ position = position + this.bgStart; }
+        
+        //Set min position
+        if(position < this.min){ position = this.min; }
 
         if(this.options.bgParallax === true) {
             this.$element.css({backgroundPosition: '50% '+position+'px'});
