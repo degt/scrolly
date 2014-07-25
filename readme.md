@@ -9,6 +9,8 @@ Scrolly
 
 You can add ``data-fit="xx"`` to adjust your parallax in real conditions.
 
+You can add ``data-min="xx"`` to set minimun background top position.
+
 If it's a simple element, like an image.
     
     $('.parallax').scrolly();
